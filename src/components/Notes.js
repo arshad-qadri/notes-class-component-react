@@ -20,7 +20,10 @@ class Notes extends Component {
   render() {
     return (
       <div className="notes">
-        <h1>Notes {this.state.isToggle}</h1>
+        <h1>
+          Notes
+          {/* {this.state.isToggle} */}
+        </h1>
 
         {data.map((elem, i) => {
           return (
@@ -30,13 +33,7 @@ class Notes extends Component {
                   {i + 1}. {elem.question}
                 </h2>
 
-                {elem.toggler ? (
-                  <p style={{ marginLeft: "27px", marginTop: "10px" }}>
-                    {elem.answer}
-                  </p>
-                ) : (
-                  ""
-                )}
+                {elem.toggler ? <p>{elem.answer}</p> : ""}
               </div>
               <hr />
             </div>

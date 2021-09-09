@@ -30,4 +30,20 @@
 .notes p {
   /* font-weight: bold; */
   font-size: 20px;
+  text-align: justify;
+  margin-top: 10px;
+  margin-left: 27px;
+}
+
+@media only screen and (max-width: 768px) {
+  .notes {
+    width: 95%;
+  }
+  .notes h2 {
+    font-size: 18px;
+  }
+  .notes p {
+    font-size: 15px;
+    margin-left: 0;
+  }
 }
