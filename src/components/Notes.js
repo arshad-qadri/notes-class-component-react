@@ -1,29 +1,25 @@
 import React, { Component } from "react";
 import data from "./data";
-console.log(data);
 class Notes extends Component {
   constructor() {
     super();
-    this.state = { isToggle: "ok" };
+    this.state = { id: null };
   }
 
   handleClick(id) {
-    const t = data.findIndex((e) => e.id === id);
-    this.setState({ isToggle: "test" });
-    if (data[t].toggler === true) {
-      data[t].toggler = false;
+    if (this.state.id === id) {
+
+      this.setState({ id: null })
     } else {
-      data[t].toggler = true;
+      this.setState({ id: id })
+
     }
   }
 
   render() {
     return (
       <div className="notes">
-        <h1>
-          Notes
-          {/* {this.state.isToggle} */}
-        </h1>
+        <h1>Notes</h1>
 
         {data.map((elem, i) => {
           return (
@@ -33,7 +29,7 @@ class Notes extends Component {
                   {i + 1}. {elem.question}
                 </h2>
 
-                {elem.toggler ? <p>{elem.answer}</p> : ""}
+                {this.state.id === elem.id && <p>{elem.answer}</p>}
               </div>
               <hr />
             </div>
